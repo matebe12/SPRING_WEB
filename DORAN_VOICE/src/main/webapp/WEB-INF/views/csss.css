@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+html, body {
+	margin: 0;
+	font-family: Cambria;
+	padding: 0;
+}
+
+.wrapper {
+	float: left;
+	width: 100%;
+	min-height: 250px;
+}
+
+.navigation {
+	float: left;
+	width: 100%;
+	text-align: center;
+	background-color: rgb(212, 222, 237);
+}
+
+.navigation ul {
+	margin: 0;
+	padding: 0;
+	float: none;
+	width: auto;
+	list-style: none;
+	display: inline-block;
+}
+
+.navigation ul li {
+	float: left;
+	width: auto;
+	margin-right: 60px;
+	position: relative;
+}
+
+.navigation ul li:last-child {
+	margin: 0;
+}
+
+.navigation ul li a {
+	float: left;
+	width: 100%;
+	color: #333;
+	padding: 16px 0;
+	font-size: 25px;
+	line-height: normal;
+	text-decoration: none;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	font-family: 'Krub', sans-serif;
+	-webkit-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+
+.navigation .children {
+	position: absolute;
+	top: 100%;
+	z-index: 1000;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	min-width: 240px;
+	background-color: #fff;
+	border: solid 1px #dbdbdb;
+	opacity: 0;
+	-webkit-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.navigation ul li .children {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateX(-75deg);
+	transform: rotateX(-75deg);
+	visibility: hidden;
+}
+
+.navigation ul li:hover>.children {
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+	opacity: 1;
+	visibility: visible;
+}
+
+.navigation ul li .children .children {
+	left: 100%;
+	top: 0;
+}
+
+.navigation ul li.last .children {
+	right: 0;
+	left: auto;
+}
+
+.navigation ul li.last .children .children {
+	right: 100%;
+	left: auto;
+}
+
+.navigation ul li .children li {
+	float: left;
+	width: 100%;
+	margin: 0;
+}
+
+.navigation ul li .children  a {
+	display: block;
+	font-family: 'Krub', sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 17px;
+	color: #428bca;
+	text-align: left;
+	line-height: 1.5em;
+	padding: 16px 30px;
+	letter-spacing: normal;
+	border-bottom: 1px solid #dbdbdb;
+	-webkit-transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
+}
+
+.navigation ul li .children  a:hover {
+	color: #333;
+	background-color: rgb(212, 222, 237);
+}
+
+.navigation ul li a:hover { /*메뉴바 글씨*/
+	color: white;
+}
+/*메뉴바 관련*/
+
+/*전체 색깔*/
+body {
+	background: repeating-linear-gradient(rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0.7) 92%, rgba(255, 255, 255, 0.5)),
+		repeating-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 92%,
+		rgba(0, 0, 0, 0.2)),
+		repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.1),
+		rgba(0, 0, 0, 0.1) 92%, rgba(0, 0, 0, 0.2));
+	background-size: 18px 18px, 12px 12px, 12px 12px;
+}
+
+/*로그인쪽*/
+#sign {
+	text-align: right;
+	font-size: 20px;
+	word-spacing: 1em;
+	margin: 1%;
+}
+
+#login {
+	color: #428bca;
+}
+/*스타일 끝*/

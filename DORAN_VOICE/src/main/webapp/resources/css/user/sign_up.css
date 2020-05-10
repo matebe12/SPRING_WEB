@@ -1,0 +1,84 @@
+
+
+.container {
+   margin-bottom: 5%;
+   margin-top: 5%;
+}
+
+.inner-container {
+   border: 3px solid #c3d4ee;
+   background-color: #fff;
+   border: 4px solid #2B3946;
+   box-shadow: 5px 5px 10px silver;
+   border-radius: 4px;
+   width: 400px;
+   margin: 0 auto;
+
+   -webkit-animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */ 
+   from { opacity:0;}
+   to {opacity: 1;}
+}
+
+#myForm {
+   font-family: 'Noto Sans KR', sans-serif;
+   margin: 0 auto;
+   width: 250px;
+   font-size: 17pt;
+   text-align: left;
+}
+
+/* .help-block 을 일단 보이지 않게 설정 */
+#myForm .help-block {
+   display: none;
+}
+/* glyphicon 을 일단 보이지 않게 설정 */
+#myForm .glyphicon {
+   display: none;
+}
+
+#doranlogo {
+   margin: 0 auto;
+   padding-left: 5px;
+}
+
+#back {
+   font-family: 'S-CoreDream-3Light';
+   font-size: 13pt;
+}
+
+#submit { /*가입하기 버튼*/
+   width: 87.5%;
+   background-color: #2B3946;
+   border: 1px solid #2B3946;
+   color: white;
+   font-size: 15pt;
+   font-weight: bold;
+}
+
+#idCheck {
+   float: left;
+   margin: 0 auto;
+   display: inline-flex;
+   background-color: #2B3946;
+   border: 1px solid #2B3946;
+   color: white;
+   height: 38px;
+   width: 25%;
+   text-align: center;
+}
+
+.form-group-IDAll {
+   display: inline-flex;
+   float: left;
+}
+
+#form-group-inputAll>name {
+   margin-bottom: 15px;
+}
+
+#All-text {
+   padding-left: 10%;
+}@charset "UTF-8";

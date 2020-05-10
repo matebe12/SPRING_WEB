@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 0%;
+	min-height: 0%;
+	width: 80%;
+	height: 70%;
+	z-index: 0;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+}
+
+@media ( pointer : coarse) and (hover: none) {
+	header {
+		background:
+			url('http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg')
+			black no-repeat center center scroll;
+	}
+	header video {
+		display: none;
+	}
+}
+
+.display-3 {
+	font-family: Pattaya;
+	font-weight: 600;
+	font-size: 40px;
+}

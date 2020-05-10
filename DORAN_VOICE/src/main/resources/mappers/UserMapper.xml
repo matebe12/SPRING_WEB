@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ex.dao.User.UserMapper">
+
+<insert id="insertUser" parameterType="Map">
+<selectKey resultType="string" keyProperty="UID" order="BEFORE">
+<![CDATA[
+		SELECT 	CONCAT(('USER'), SUBSTR(IFNULL((CAST(SUBSTR(MAX(UID), LENGTH(MAX(UID)) - 8, 9) AS UNSIGNED) + 1000000001), '1000000001'), 2, 9)) AS UID
+		FROM   	TU_USER
+]]>
+</selectKey>
+
+	INSERT INTO TU_USER
+	(
+		UID, USER_PW, USER_NAME, USER_ID, USER_PHONE, USER_EMAIL, USER_BIRTH, CREATED_DT
+	)
+	VALUES
+	(
+	#{UID}, #{USER_PW}, #{USER_NAME}, #{USER_ID}, #{USER_PHONE}, #{USER_EMAIL}, #{USER_BIRTH}, NOW()
+	)
+</insert>
+
+<select id="getUserId" resultType="int" parameterType="Map">
+	SELECT COUNT(*) FROM TU_USER 
+	WHERE USER_ID = #{USER_ID}
+</select>
+
+<select id="getUser" resultType="Map" parameterType="Map">
+	SELECT USER_ID, USER_NAME, USER_EMAIL
+	FROM TU_USER
+	WHERE USER_ID = #{USER_ID} AND USER_PW = #{USER_PW}
+</select>
+</mapper>
